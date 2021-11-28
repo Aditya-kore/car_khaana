@@ -1,0 +1,44 @@
+{
+    "items": [
+        {
+            "id": 1,
+            "name": "Tata Safari",
+            "desc": "Tata Safari Diesel Top End",
+            "price": 999,
+            "color": "#33505a",
+            "image": "https://cdni.autocarindia.com/ExtraImages/20210127073637_2021_Tata_Safari_front.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Porsche",
+            "desc": "Porsche Petrol Automatic Top End",
+            "price": 999,
+            "color": "#33505a",
+            "image": "https://images.carandbike.com/car-images/large/porsche/taycan/porsche-taycan.jpg?v=2"
+        },
+        {
+            "id": 3,
+            "name": "Volkswagen Polo",
+            "desc": "Volkswagen Polo Petrol Manual Top End",
+            "price": 899,
+            "color": "#33505a",
+            "image": "https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=https://cdni.autocarindia.com/ExtraImages/20201007025719_Volkswagen-Polo-GT-front.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Hyundai Creta",
+            "desc": "Hyundai Creta Diesel Top End",
+            "price": 999,
+            "color": "#33505a",
+            "image": "https://stimg.cardekho.com/images/carexteriorimages/930x620/Hyundai/Creta/6775/1584360708758/front-left-side-47.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Kia Sonet",
+            "desc": "Kia Sonet Diesel Top End",
+            "price": 399,
+            "color": "#33505a",
+            "image": "https://stimg.cardekho.com/images/carexteriorimages/930x620/Kia/Sonet/7256/1619865764843/front-left-side-47.jpg"
+        }
+    ]
+}
