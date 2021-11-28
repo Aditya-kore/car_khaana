@@ -19,27 +19,67 @@ class CatalogModel{
     ),
     Item(
       id: 3,
-      name: "Volkswagen Polo",
-      desc: "Volkswagen Polo Petrol Manual Top End",
-      price: 8,
+      name: "Ferrari SF90",
+      desc: "Ferrari SF90 Petrol Automatic Top End Sports+",
+      price: 120,
       color: "red",
-      image: "assets/images/polo.jpg"
+      image: "assets/images/ferrari.jpg"
     ),
     Item(
       id: 4,
-      name: "Hyundai Creta",
-      desc: "Hyundai Creta Diesel Top End",
-      price: 9,
-      color: "white",
-      image: "assets/images/creta.jpg"
-),
+      name: "Hyundai i30N",
+      desc: "Hyundai i30N Diesel Top End",
+      price: 18,
+      color: "blue",
+      image: "assets/images/hyundai.jpg"
+    ),
     Item(
       id: 5,
-      name: "Kia Sonet",
-      desc: "Kia Sonet Diesel Top End",
-      price: 7,
+      name: "Skoda Octavia",
+      desc: "Skoda Octavia Diesel Top End",
+      price: 14,
+      color: "teal",
+      image: "assets/images/skoda.jpg"
+    ),
+    Item(
+      id: 6,
+      name: "Audi RS5",
+      desc: "Audi RS5 Diesel Top End",
+      price: 40,
+      color: "green",
+      image: "assets/images/audi.jpg"
+    ),
+    Item(
+      id: 7,
+      name: "Toyota Land Cruiser",
+      desc: "Toyota Land Cruiser Top End Diesel",
+      price: 55,
+      color: "white",
+      image: "assets/images/toyota.jpg"
+    ),
+    Item(
+      id: 8,
+      name: "BMW 5 Series",
+      desc: "BMW 5 Series Petrol Top End",
+      price: 60,
+      color: "grey",
+      image: "assets/images/bmw.jpg"
+    ),
+    Item(
+      id: 9,
+      name: "Lamborghini Urus",
+      desc: "Lamborghini Urus Petrol Top End",
+      price: 110,
       color: "amber",
-      image: "assets/images/kia_sonet.jpg"
+      image: "assets/images/lamborghini.jpg"
+    ),
+    Item(
+      id: 10,
+      name: "Landrover Defender",
+      desc: "Landrover Defender Diesel Top End",
+      price: 80,
+      color: "green",
+      image: "assets/images/landrover.jpg"
     )
   ];
 }

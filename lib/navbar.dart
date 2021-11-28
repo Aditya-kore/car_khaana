@@ -10,7 +10,7 @@ class  NavBar extends StatelessWidget {
           currentAccountPicture: CircleAvatar(
             child: ClipOval(
               child: Image.network(
-                'https://alrigh.com/wp-content/uploads/2020/06/10-Midoriya-Izuku-profile-picture-1024x1018.jpg',
+                'assets/images/profile.jpg',
                 width: 90,
                 height: 90,
                 fit: BoxFit.cover,
@@ -19,7 +19,7 @@ class  NavBar extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.blue,
               image: DecorationImage(
-                image: NetworkImage('https://cdn.shopify.com/s/files/1/1056/3342/products/mountain-mural-wallpaper-4.jpg?v=1560882775'),
+                image: NetworkImage('assets/images/cover.jpg'),
                 fit: BoxFit.cover,
               )
             ),
