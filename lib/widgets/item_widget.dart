@@ -1,6 +1,7 @@
 // @dart=2.9
 import 'package:car_khaana/models/category.dart';
 import 'package:flutter/material.dart';
+import 'package:bordered_text/bordered_text.dart';
 
 class ItemWidget extends StatelessWidget {
   final Item item;
@@ -16,7 +17,7 @@ class ItemWidget extends StatelessWidget {
 
     var dPadding = MediaQuery.of(context).padding;
     var dSafeHeight = dHeight - dPadding.top - dPadding.bottom;
-
+    
     return InkWell(
       onTap: () {
         print("${item.name} is pressed");
@@ -27,10 +28,21 @@ class ItemWidget extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(30.0),
             child: Center(
-              child: Image.asset(
-                item.image,
-                height: dSafeHeight * 0.7,
-                fit: BoxFit.cover,
+              child: ShaderMask(
+                shaderCallback: (rect) {
+                  return LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.center,
+                    colors: [Colors.transparent, Colors.black],
+                  ).createShader(
+                      Rect.fromLTRB(0, 0, rect.width, rect.height * 2.2));
+                },
+                blendMode: BlendMode.srcATop,
+                child: Image.asset(
+                  item.image,
+                  height: dSafeHeight * 0.7,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),
@@ -51,11 +63,16 @@ class ItemWidget extends StatelessWidget {
                     height: dSafeHeight * 0.05,
                   ),
                   Center(
-                    child: Text(item.name,
-                        style: TextStyle(
-                            fontSize: dSafeHeight * 0.04,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold)),
+                    child: BorderedText(
+                      strokeColor: Colors.black26,
+                      strokeJoin: StrokeJoin.round,
+                      strokeWidth: 3,
+                      child: Text(item.name,
+                          style: TextStyle(
+                              fontSize: dSafeHeight * 0.04,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold)),
+                    ),
                   ),
                   SizedBox(
                     height: dSafeHeight * 0.45, //padding for bottom text
@@ -74,8 +91,11 @@ class ItemWidget extends StatelessWidget {
                         padding: EdgeInsets.all(0),
                         child: Row(
                           children: [
-                            Icon(Icons.access_time,color: Colors.white,),
-                            Text("2 days ago",
+                            Icon(
+                              Icons.access_time,
+                              color: Colors.white,
+                            ),
+                            Text(" 2 days ago",
                                 style: TextStyle(
                                     fontSize: dSafeHeight * 0.02,
                                     color: Colors.white)),
@@ -91,8 +111,11 @@ class ItemWidget extends StatelessWidget {
                         padding: EdgeInsets.all(0),
                         child: Row(
                           children: [
-                            Icon(Icons.brush,color: Colors.orange,),
-                            Text("Color",
+                            Icon(
+                              Icons.brush,
+                              color: Colors.orange,
+                            ),
+                            Text(item.color,
                                 style: TextStyle(
                                     fontSize: dSafeHeight * 0.02,
                                     color: Colors.white)),
@@ -103,7 +126,10 @@ class ItemWidget extends StatelessWidget {
                         padding: EdgeInsets.all(0),
                         child: Row(
                           children: [
-                            Icon(Icons.phone,color: Colors.green,),
+                            Icon(
+                              Icons.phone,
+                              color: Colors.green,
+                            ),
                             Text("8888888888",
                                 style: TextStyle(
                                     fontSize: dSafeHeight * 0.02,
@@ -115,7 +141,8 @@ class ItemWidget extends StatelessWidget {
                   ),
                   Center(
                     child: Padding(
-                      padding: const EdgeInsets.only(left:20,right:20,top:20,bottom:0),
+                      padding: const EdgeInsets.only(
+                          left: 20, right: 20, top: 20, bottom: 0),
                       child: Text(
                         item.desc,
                         textAlign: TextAlign.center,

@@ -2,6 +2,7 @@ import 'package:car_khaana/main.dart';
 import 'package:car_khaana/login_page.dart';
 import 'package:car_khaana/navbar.dart';
 import 'package:car_khaana/widgets/ads_list.dart';
+import 'package:car_khaana/widgets/add_order_button.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -56,6 +57,7 @@ class HomePage extends StatelessWidget {
             buildPage('Account'),
           ],
         ),
+        floatingActionButton: addButton(),
       ),
   );
 
