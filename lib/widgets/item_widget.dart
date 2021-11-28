@@ -11,87 +11,17 @@ class ItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var dWidth = MediaQuery.of(context).size.width;
+    var dHeight = MediaQuery.of(context).size.height;
+
+    var dPadding = MediaQuery.of(context).padding;
+    var dSafeHeight = dHeight - dPadding.top - dPadding.bottom;
+
     return InkWell(
       onTap: () {
         print("${item.name} is pressed");
       },
       child: Stack(children: [
-        Container(
-            height: 580,
-            width: double.infinity,
-            margin: EdgeInsets.only(top: 20, bottom: 20),
-            padding: EdgeInsets.symmetric(horizontal: 0),
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(Radius.circular(5))),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                SizedBox(
-                  height: 420,
-                ),
-                Center(
-                  child: Text(item.name,
-                      style: TextStyle(
-                          fontSize: 24,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold)),
-                ),
-                Row(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(left: 20),
-                      child: Text("\₹${item.price} lakhs",
-                          style: TextStyle(fontSize: 16, color: Colors.black)),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 215),
-                      child: Row(
-                        children: [
-                          Icon(Icons.access_time),
-                          Text("2 days ago",
-                              style:
-                                  TextStyle(fontSize: 16, color: Colors.black)),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-                Row(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(left: 15),
-                      child: Row(
-                        children: [
-                          Icon(Icons.brush),
-                          Text("Color",
-                              style:
-                                  TextStyle(fontSize: 16, color: Colors.black)),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 225),
-                      child: Row(
-                        children: [
-                          Icon(Icons.phone),
-                          Text("8888888888",
-                              style:
-                                  TextStyle(fontSize: 16, color: Colors.black)),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-                Center(
-                  child: Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Text(item.desc, style: TextStyle(fontSize: 18,),),
-                  ),
-                ),              
-              ],
-            )),
         Padding(
           padding: const EdgeInsets.only(top: 30.0),
           child: ClipRRect(
@@ -99,12 +29,104 @@ class ItemWidget extends StatelessWidget {
             child: Center(
               child: Image.asset(
                 item.image,
-                height: 400,
+                height: dSafeHeight * 0.7,
                 fit: BoxFit.cover,
               ),
             ),
           ),
-        )
+        ),
+        Center(
+          child: Container(
+              height: dSafeHeight * 0.7,
+              width: dSafeHeight * 0.7,
+              margin: EdgeInsets.only(top: 20, bottom: 0, left: 20, right: 20),
+              padding: EdgeInsets.symmetric(horizontal: 0),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(5))),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  SizedBox(
+                    height: dSafeHeight * 0.05,
+                  ),
+                  Center(
+                    child: Text(item.name,
+                        style: TextStyle(
+                            fontSize: dSafeHeight * 0.04,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold)),
+                  ),
+                  SizedBox(
+                    height: dSafeHeight * 0.45, //padding for bottom text
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.all(0),
+                        child: Text("\₹${item.price} lakhs",
+                            style: TextStyle(
+                                fontSize: dSafeHeight * 0.02,
+                                color: Colors.white)),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.all(0),
+                        child: Row(
+                          children: [
+                            Icon(Icons.access_time,color: Colors.white,),
+                            Text("2 days ago",
+                                style: TextStyle(
+                                    fontSize: dSafeHeight * 0.02,
+                                    color: Colors.white)),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.all(0),
+                        child: Row(
+                          children: [
+                            Icon(Icons.brush,color: Colors.orange,),
+                            Text("Color",
+                                style: TextStyle(
+                                    fontSize: dSafeHeight * 0.02,
+                                    color: Colors.white)),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.all(0),
+                        child: Row(
+                          children: [
+                            Icon(Icons.phone,color: Colors.green,),
+                            Text("8888888888",
+                                style: TextStyle(
+                                    fontSize: dSafeHeight * 0.02,
+                                    color: Colors.white)),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                  Center(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left:20,right:20,top:20,bottom:0),
+                      child: Text(
+                        item.desc,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: dSafeHeight * 0.025, color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ],
+              )),
+        ),
       ]),
     );
   }
