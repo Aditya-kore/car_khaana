@@ -4,6 +4,7 @@ import 'package:car_khaana/navbar.dart';
 import 'package:car_khaana/widgets/ads_list.dart';
 import 'package:car_khaana/widgets/add_order_button.dart';
 import 'package:car_khaana/widgets/account_tab.dart';
+import 'package:car_khaana/widgets/my_ads_tab.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -54,7 +55,7 @@ class HomePage extends StatelessWidget {
         body: TabBarView(
           children: [
             buildHomePage('Home Page'),
-            buildPage('My Ads'),
+            buildMyAdsPage('My Ads'),
             buildAccountPage('Account'),
           ],
         ),
@@ -62,15 +63,11 @@ class HomePage extends StatelessWidget {
       ),
   );
 
-  Widget buildPage(String text) => Center(
-    child: Text(
-      text,
-      style: TextStyle(fontSize: 20),
-    ),
-  );
-
   Widget buildHomePage(String text) => Center(
     child: adsList(),
+  );
+  Widget buildMyAdsPage(String text) => Center(
+    child: MyAdsTab(),
   );
   Widget buildAccountPage(String text) => Center(
     child: AccountTab(),
