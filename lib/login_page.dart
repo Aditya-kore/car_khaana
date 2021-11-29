@@ -1,4 +1,5 @@
 import 'package:car_khaana/home_page.dart';
+import 'package:car_khaana/register_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -9,6 +10,11 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var dWidth = MediaQuery.of(context).size.width;
+    var dHeight = MediaQuery.of(context).size.height;
+
+    var dPadding = MediaQuery.of(context).padding;
+    var dSafeHeight = dHeight - dPadding.top - dPadding.bottom;
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -93,7 +99,7 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: 50.0
+                        height: dHeight*0.05
                       ),
                       Container(
                         decoration: BoxDecoration(
@@ -119,11 +125,22 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: 50.0
+                        height: dHeight*0.05,
+                      ),
+                      SizedBox(
+                        height: dHeight*0.05,
+                        child: Row(
+                          children: [Text("New User? ",style: TextStyle(color: Colors.white54),),GestureDetector(child: Text(" Register here", style: TextStyle(decoration: TextDecoration.underline, color: Colors.deepPurple)), onTap: (){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    RegisterPage()));})],
+                        )
                       ),
                       SizedBox(
                         width: 120,
-                        height:45,
+                        height:dHeight*0.05,
                         child: TextButton(	
                           child: Text('Login'),
                           style: TextButton.styleFrom(
