@@ -65,7 +65,7 @@ class AccountTab extends StatelessWidget {
                 mainAxisSpacing: 20.0,
                 padding: EdgeInsets.symmetric(horizontal: 16,vertical: 8),
                 children: <Widget>[
-                  tabItems(Icons.graphic_eq,"Total Views",0000),
+                  tabItems(Icons.favorite,"Favourite",0000),
                   tabItems(Icons.bookmark,"Bookmark",0000),
                   tabItems(Icons.notifications,"Notifications",0000),
                   tabItems(Icons.attach_email,"Email",0000),

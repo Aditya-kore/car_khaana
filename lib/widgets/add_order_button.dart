@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class  addButton extends StatelessWidget {
+class addButton extends StatelessWidget {
 @override
   Widget build(BuildContext context) {
     return Padding(
@@ -50,10 +50,16 @@ class  addButton extends StatelessWidget {
                               icon: Icon(Icons.apartment ),
                             ),
                           ),
-                          TextFormField(
-                            decoration: InputDecoration(
-                              labelText: 'Add Image',
-                              icon: Icon(Icons.add_a_photo ),
+                          Padding(
+                            padding: const EdgeInsets.only(top:10.0),
+                            child: Row(
+                              children: [
+                                Icon(Icons.add_a_photo ),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 8),
+                                  child: ElevatedButton(onPressed: (){}, child: Text("Add Image")),
+                                )
+                              ]
                             ),
                           ),
                         ],

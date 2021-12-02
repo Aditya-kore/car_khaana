@@ -59,7 +59,7 @@ class HomePage extends StatelessWidget {
             buildAccountPage('Account'),
           ],
         ),
-        floatingActionButton: addButton(),
+        //floatingActionButton: addButton(),
       ),
   );
 

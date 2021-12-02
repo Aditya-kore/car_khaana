@@ -56,6 +56,60 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "firebase_auth",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-3.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "firebase_auth_platform_interface",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth_platform_interface-6.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "firebase_auth_web",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth_web-3.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "firebase_core",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-1.10.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "firebase_core_platform_interface",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_platform_interface-4.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "firebase_core_web",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-1.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "firebase_database",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_database-8.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "firebase_database_platform_interface",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_database_platform_interface-0.1.0+3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "firebase_database_web",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_database_web-0.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter",
       "rootUri": "file:///C:/flutter/packages/flutter",
       "packageUri": "lib/",
@@ -86,6 +140,30 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_web_plugins",
+      "rootUri": "file:///C:/flutter/packages/flutter_web_plugins",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "http_parser",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "intl",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "js",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "lints",
       "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/lints-1.0.1",
       "packageUri": "lib/",
@@ -100,6 +178,12 @@
     {
       "name": "meta",
       "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.7.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "nested",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/nested-1.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -126,6 +210,18 @@
       "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/petitparser-4.4.0",
       "packageUri": "lib/",
       "languageVersion": "2.14"
+    },
+    {
+      "name": "plugin_platform_interface",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-2.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "provider",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/provider-6.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "rflutter_alert",
@@ -200,7 +296,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-11-29T09:34:52.171626Z",
+  "generated": "2021-12-02T06:35:35.818805Z",
   "generator": "pub",
   "generatorVersion": "2.14.2"
 }

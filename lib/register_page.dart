@@ -1,11 +1,14 @@
 import 'package:car_khaana/home_page.dart';
 import 'package:car_khaana/login_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatelessWidget {
   final unameController = TextEditingController();
+  final emailController = TextEditingController();
   final passController = TextEditingController();  
   String uname = "uname";
+  String email = "email";
   String pass = "pass";
 
   @override
@@ -85,7 +88,7 @@ class RegisterPage extends StatelessWidget {
                         child: TextField(
                           style: TextStyle(color: Colors.white,),
                           controller: unameController,
-                          keyboardType: TextInputType.emailAddress,
+                          keyboardType: TextInputType.name,
                           decoration: InputDecoration(                                
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8.0),
@@ -109,7 +112,7 @@ class RegisterPage extends StatelessWidget {
                         ),
                         child: TextField(
                           style: TextStyle(color: Colors.white,),
-                          controller: unameController,
+                          controller: emailController,
                           keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(                                
                             border: OutlineInputBorder(

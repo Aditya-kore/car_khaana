@@ -1,12 +1,12 @@
 import 'package:car_khaana/home_page.dart';
 import 'package:car_khaana/register_page.dart';
+import 'package:car_khaana/services/authentication_service.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
-  final unameController = TextEditingController();
+  final emailController = TextEditingController();
   final passController = TextEditingController();  
-  String uname = "uname";
-  String pass = "pass";
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +83,7 @@ class LoginPage extends StatelessWidget {
                         ),
                         child: TextField(
                           style: TextStyle(color: Colors.white,),
-                          controller: unameController,
+                          controller: emailController,
                           keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(                                
                             border: OutlineInputBorder(
@@ -130,12 +130,20 @@ class LoginPage extends StatelessWidget {
                       SizedBox(
                         height: dHeight*0.05,
                         child: Row(
-                          children: [Text("New User? ",style: TextStyle(color: Colors.white54),),GestureDetector(child: Text(" Register here", style: TextStyle(decoration: TextDecoration.underline, color: Colors.deepPurple)), onTap: (){
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    RegisterPage()));})],
+                          children: [
+                            Text("New User? ",
+                            style: TextStyle(color: Colors.white54),),
+                            GestureDetector(
+                              child: Text(" Register here", 
+                              style: TextStyle(decoration: TextDecoration.underline, color: Colors.deepPurple)), 
+                              onTap: (){
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) =>RegisterPage())
+                                  );
+                              }
+                            )
+                          ],
                         )
                       ),
                       SizedBox(
@@ -151,12 +159,23 @@ class LoginPage extends StatelessWidget {
                                 fontSize: 25,	                                      	
                             ),	
                           ),	
-                          onPressed: () {	    
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        HomePage()));
+                          onPressed: () {
+                            final String email = emailController.text.trim();
+                            final String pass = passController.text.trim();
+
+                            if (email.isEmpty) {
+                              print("email is empty");
+                            } else {
+                              if (pass.isEmpty) {
+                                print("pass is empty");
+                              } else {
+                                // context.read<AuthenticationService>().login(email:email,password: pass);
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) =>HomePage())
+                                  );
+                              }
+                            } 
                           },	
                       ))
                     ],
