@@ -6,30 +6,42 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-void main() async {
- // WidgetsFlutterBinding.ensureInitialized();
-
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
  // await Firebase.initializeApp();
+
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+
+ // final Future<FirebaseApp> _initialization = Firebase.initializeApp();
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: LoginPage()
-      );
+    return MultiProvider(
+      providers: [
+        Provider<AuthenticationService>(
+          create: (_) => AuthenticationService(FirebaseAuth.instance)),
+          StreamProvider(
+            create:(context)=> context.read<AuthenticationService>().authStateChanges,)
+      ],
+      child: MaterialApp(
+        home: AuthWrapper(),
+      ),
+    );
+        
   }
 }
 
-/* class AuthWrapper extends StatelessWidget {
+ class AuthWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final user = context.watch<User>();
+   // final firebaseuser = context.watch<User>();  //causing errors
 
-    if(user != null){
-      return Text("user null");
-    }
+    /* if(firebaseuser != null){
+      return HomePage();
+    } */
     return LoginPage();
   }
-} */
+} 

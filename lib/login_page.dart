@@ -5,8 +5,8 @@ import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
-  final emailController = TextEditingController();
-  final passController = TextEditingController();  
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passController = TextEditingController();  
 
   @override
   Widget build(BuildContext context) {
@@ -169,11 +169,13 @@ class LoginPage extends StatelessWidget {
                               if (pass.isEmpty) {
                                 print("pass is empty");
                               } else {
-                                // context.read<AuthenticationService>().login(email:email,password: pass);
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) =>HomePage())
-                                  );
+                                //context.read<AuthenticationService>().login(email:email,password: pass);
+                                print("done login");     
+
+                                Navigator.push(    //remove this part for firebase
+                                    context,
+                                    MaterialPageRoute(builder: (context) =>HomePage())
+                                    );                         
                               }
                             } 
                           },	
@@ -188,3 +190,16 @@ class LoginPage extends StatelessWidget {
     );
   }
 }
+
+/* class MyProvider (context) {
+  
+ return MultiProvider(
+      providers: [
+        Provider<AuthenticationService>(
+          create: (_) => AuthenticationService(FirebaseAuth.instance),
+          StreamProvider(
+            create:(context)=> context.read<AuthenticationService>().authStateChanges,)
+        )
+      ]
+    );
+  } */

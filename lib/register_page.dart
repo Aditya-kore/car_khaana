@@ -1,6 +1,8 @@
 import 'package:car_khaana/home_page.dart';
 import 'package:car_khaana/login_page.dart';
+import 'package:car_khaana/services/authentication_service.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatelessWidget {
@@ -180,12 +182,29 @@ class RegisterPage extends StatelessWidget {
                                 fontSize: 25,	                                      	
                             ),	
                           ),	
-                          onPressed: () {	    
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        HomePage()));
+                          onPressed: () {
+                            final String uname = unameController.text.trim();
+                            final String email = emailController.text.trim();
+                            final String pass = passController.text.trim();
+                            
+                            if (uname.isEmpty){
+                              print("username is empty");
+                            } else {
+                              if (email.isEmpty) {
+                                print("email is empty");
+                              } else {
+                                if (pass.isEmpty) {
+                                  print("pass is empty");
+                                } else {
+                                  //context.read<AuthenticationService>().signUp(email:email,password: pass); 
+
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) =>HomePage())
+                                    );
+                                }
+                              } 
+                            }
                           },	
                       ))
                     ],

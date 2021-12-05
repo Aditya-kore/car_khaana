@@ -1,45 +1,9 @@
 {
-  "database": {
-    "rules": "database.rules.json"
+  "functions": {
+    "source": "functions"
   },
   "firestore": {
     "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"
-  },
-  "hosting": {
-    "public": "public",
-    "site": "car-khaana-flutter",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
-  },
-  "storage": {
-    "rules": "storage.rules"
-  },
-  "emulators": {
-    "auth": {
-      "port": 8080
-    },
-    "database": {
-      "port": 8081
-    },
-    "storage": {
-      "port": 8082
-    },
-    "ui": {
-      "enabled": true,
-      "port": 8083
-    }
-  },
-  "remoteconfig": {
-    "template": "remoteconfig.template.json"
   }
 }

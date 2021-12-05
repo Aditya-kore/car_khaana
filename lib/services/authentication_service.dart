@@ -6,6 +6,10 @@ class AuthenticationService {
   AuthenticationService(this._firebaseAuth);
 
   Stream<User> get authStateChanges => _firebaseAuth.idTokenChanges();
+  
+  Future<void> signOut() async {
+    await _firebaseAuth.signOut();
+  }
 
   Future<String> login({String email,String password}) async {
     try {
